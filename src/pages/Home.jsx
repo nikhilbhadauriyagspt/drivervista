@@ -1,8 +1,10 @@
-﻿import React, { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Hero from '../components/Hero';
+import Capabilities from '../components/Capabilities';
+import TechnicalInsights from '../components/TechnicalInsights';
 import About from '../components/About';
 import Services from '../components/Services';
 import Blog from '../components/Blog';
@@ -21,27 +23,20 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Appliance Vista - Trusted Home Appliance Repair Services</title>
-        <meta name="description" content="Reliable home appliance repair near you. Experts in washing machines, refrigerators, ACs & more. Certified technicians, same-day service, fair pricing." />
-        <link rel="canonical" href="https://www.appliancevista.shop/" />
-        
-        {/* Social Media Sharing Tags */}
-        <meta property="og:title" content="Appliance Vista - Trusted Home Appliance Repair Services" />
-        <meta property="og:description" content="Reliable home appliance repair near you. Experts in washing machines, refrigerators, ACs & more. Certified technicians, same-day service, fair pricing." />
-        <meta property="og:image" content="https://www.appliancevista.shop/logo/logo.png" />
-        <meta property="og:url" content="https://www.appliancevista.shop/" />
-        <meta name="twitter:card" content="summary_large_image" />
+        <title>DriverVista - Professional System Driver Support & Solutions</title>
+        <meta name="description" content="Expert solutions for computer driver issues. We diagnose and fix chipset, graphics, audio, and network driver problems to optimize your system performance." />
+        <link rel="canonical" href="https://www.drivervista.tech/" />
       </Helmet>
+
       <Hero />
-      <About />
       <Services />
+      <About />
+      <Capabilities />
       <Process />
+      <TechnicalInsights />
       <FAQ />
-      <Blog />
-      <Contact />
     </>
   );
 };
 
 export default Home;
-

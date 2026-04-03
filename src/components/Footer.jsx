@@ -1,51 +1,86 @@
-﻿import React, { useState } from 'react';
-import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaPaperPlane, FaCheckCircle } from 'react-icons/fa';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram, FaCogs } from 'react-icons/fa';
 
 const Footer = () => {
-  const [subscribed, setSubscribed] = useState(false);
+  const coreDrivers = [
+    { name: 'Chipset Drivers', slug: 'chipset-drivers' },
+    { name: 'Graphics Support', slug: 'graphics-drivers' },
+    { name: 'Audio & Sound', slug: 'audio-drivers' },
+    { name: 'Network & Wi-Fi', slug: 'network-drivers' },
+    { name: 'Storage Controllers', slug: 'storage-controller' },
+  ];
 
-  const handleSubscribe = (e) => {
-    e.preventDefault();
-    setSubscribed(true);
-    setTimeout(() => setSubscribed(false), 5000);
-  };
+  const quickLinks = [
+    { name: 'About Ecosystem', path: '/about' },
+    { name: 'How It Works', path: '/#process' },
+    { name: 'Support FAQ', path: '/#faq' },
+    { name: 'Technical Support', path: '/contact' },
+  ];
+
+  const policies = [
+    { name: 'Privacy Policy', path: '/privacy-policy' },
+    { name: 'Terms of Service', path: '/terms-of-service' },
+    { name: 'Cookie Policy', path: '/cookie-policy' },
+  ];
 
   return (
-    <footer className="bg-primary-dark text-white">
-      <div className="container mx-auto px-4 pt-20 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
-          {/* Company Bio */}
+    <footer className="bg-[#05070a] text-white pt-20 pb-10 overflow-hidden relative font-poppins">
+      {/* Decorative Blur Background */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2"></div>
+      
+      <div className="container mx-auto px-6 lg:px-12 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          
           <div className="space-y-6">
-            <div className="flex items-center gap-3">
-              <img src="/logo/logo.png" alt="Appliance Vista" className="h-12 w-auto object-contain bg-white rounded-lg p-1" />
-            </div>
-            <p className="text-gray-400 leading-relaxed">
-              Appliance Vista is your trusted partner for high-quality home appliance repair and maintenance. We provide technical support for washing machines, refrigerators, AC units, and various household brands with a focus on reliability and long-term functionality.
+            <Link to="/" className="flex items-center gap-2 group">
+              <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center group-hover:rotate-12 transition-transform duration-300 shadow-lg shadow-blue-600/20">
+                <FaCogs className="text-white text-xl" />
+              </div>
+              <span className="text-2xl font-extrabold tracking-tighter uppercase italic leading-none">
+                Driver<span className="text-blue-600">Vista</span>
+              </span>
+            </Link>
+            <p className="text-slate-400 text-sm leading-relaxed font-medium">
+              Leading the way in hardware communication standards. We provide technical diagnostics and verified driver solutions for peak system performance.
             </p>
+            <div className="flex gap-4">
+              {[FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram].map((Icon, index) => (
+                <a key={index} href="#" className="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all">
+                  <Icon size={14} />
+                </a>
+              ))}
+            </div>
           </div>
 
-          {/* Quick Links */}
-          <div className="lg:pl-8">
-            <h5 className="font-bold text-lg mb-8 relative inline-block">
-              Quick Links
-              <span className="absolute -bottom-2 left-0 w-12 h-1 bg-secondary rounded-full"></span>
-            </h5>
+          <div>
+            <h4 className="text-white font-bold text-base mb-8 uppercase tracking-widest border-l-4 border-blue-600 pl-4">Core Drivers</h4>
             <ul className="space-y-4">
-              {[
-                { name: 'Home', path: '/' },
-                { name: 'About Us', path: '/about' },
-                { name: 'Services', path: '/#services' },
-                { name: 'Contact', path: '/contact' }
-              ].map((item) => (
-                <li key={item.name}>
-                  {item.path.startsWith('#') ? (
-                    <a href={item.path} className="text-gray-400 hover:text-secondary hover:translate-x-2 transition-all inline-block">
-                      {item.name}
+              {coreDrivers.map((link) => (
+                <li key={link.slug}>
+                  <Link to={`/service/${link.slug}`} className="text-slate-400 hover:text-blue-600 transition-colors text-sm font-medium flex items-center gap-2 group">
+                    <span className="w-1.5 h-1.5 bg-blue-600/40 rounded-full group-hover:bg-blue-600 transition-colors"></span>
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-white font-bold text-base mb-8 uppercase tracking-widest border-l-4 border-blue-600 pl-4">Quick Links</h4>
+            <ul className="space-y-4">
+              {quickLinks.map((link) => (
+                <li key={link.name}>
+                  {link.path.startsWith('/#') ? (
+                    <a href={link.path} className="text-slate-400 hover:text-blue-600 transition-colors text-sm font-medium flex items-center gap-2 group">
+                      <span className="w-1.5 h-1.5 bg-blue-600/40 rounded-full group-hover:bg-blue-600 transition-colors"></span>
+                      {link.name}
                     </a>
                   ) : (
-                    <Link to={item.path} className="text-gray-400 hover:text-secondary hover:translate-x-2 transition-all inline-block">
-                      {item.name}
+                    <Link to={link.path} className="text-slate-400 hover:text-blue-600 transition-colors text-sm font-medium flex items-center gap-2 group">
+                      <span className="w-1.5 h-1.5 bg-blue-600/40 rounded-full group-hover:bg-blue-600 transition-colors"></span>
+                      {link.name}
                     </Link>
                   )}
                 </li>
@@ -53,82 +88,49 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Info */}
           <div>
-            <h5 className="font-bold text-lg mb-8 relative inline-block">
-              Contact Info
-              <span className="absolute -bottom-2 left-0 w-12 h-1 bg-secondary rounded-full"></span>
-            </h5>
+            <h4 className="text-white font-bold text-base mb-8 uppercase tracking-widest border-l-4 border-blue-600 pl-4">System Support</h4>
             <ul className="space-y-6">
-              <li className="flex items-start gap-4 group">
-                <div className="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-secondary group-hover:text-white transition-colors duration-300">
-                  <FaMapMarkerAlt className="text-secondary group-hover:text-white transition-colors" />
+              <li className="flex gap-4">
+                <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-blue-500 border border-white/10 shadow-sm">
+                  <FaPhone size={14} />
                 </div>
-                <span className="text-gray-400 text-sm leading-relaxed mt-1">Grandview Glendale, CA 91201, USA</span>
-              </li>
-              <li className="flex items-start gap-4 group">
-                <div className="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-secondary group-hover:text-white transition-colors duration-300">
-                  <FaPhoneAlt className="text-secondary group-hover:text-white transition-colors" />
-                </div>
-                <div className="flex flex-col gap-1 mt-1">
-                  <span className="text-gray-400 text-sm">+1-402-508-9991</span>
+                <div>
+                  <p className="text-slate-500 text-[10px] font-bold uppercase tracking-widest mb-1">Direct Line</p>
+                  <p className="text-white text-sm font-bold tracking-tight">+1 (234) 567-8901</p>
                 </div>
               </li>
-              <li className="flex items-start gap-4 group">
-                <div className="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-secondary group-hover:text-white transition-colors duration-300">
-                  <FaEnvelope className="text-secondary group-hover:text-white transition-colors" />
+              <li className="flex gap-4">
+                <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-blue-500 border border-white/10 shadow-sm">
+                  <FaEnvelope size={14} />
                 </div>
-                <span className="text-gray-400 text-sm mt-2">appliancevista@outlook.com</span>
+                <div>
+                  <p className="text-slate-500 text-[10px] font-bold uppercase tracking-widest mb-1">Email Support</p>
+                  <p className="text-white text-sm font-bold tracking-tight">support@drivervista.tech</p>
+                </div>
+              </li>
+              <li className="flex gap-4">
+                <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-blue-500 border border-white/10 shadow-sm">
+                  <FaMapMarkerAlt size={14} />
+                </div>
+                <div>
+                  <p className="text-slate-500 text-[10px] font-bold uppercase tracking-widest mb-1">Operations</p>
+                  <p className="text-white text-sm font-bold tracking-tight">Tech Corridor, CA, USA</p>
+                </div>
               </li>
             </ul>
           </div>
 
-          {/* Newsletter */}
-          <div>
-            <h5 className="font-bold text-lg mb-8 relative inline-block">
-              Newsletter
-              <span className="absolute -bottom-2 left-0 w-12 h-1 bg-secondary rounded-full"></span>
-            </h5>
-            <p className="text-gray-400 mb-6 leading-relaxed">
-              Stay updated with our latest offers and repair tips. Subscribe to our newsletter today!
-            </p>
-            {subscribed ? (
-              <div className="flex items-center gap-3 bg-white/5 p-4 rounded-2xl border border-secondary/30 text-secondary animate-in zoom-in duration-300">
-                <FaCheckCircle size={20} />
-                <span className="font-bold text-sm">Successfully Subscribed!</span>
-              </div>
-            ) : (
-              <form onSubmit={handleSubscribe} className="space-y-3">
-                <div className="relative group">
-                  <input
-                    required
-                    type="email"
-                    placeholder="Your Email Address"
-                    className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-6 outline-none focus:border-secondary focus:ring-4 focus:ring-secondary/10 transition-all text-sm"
-                  />
-                  <button
-                    type="submit"
-                    className="absolute right-2 top-2 bottom-2 bg-secondary hover:bg-orange-600 text-white w-12 rounded-xl flex items-center justify-center transition-all hover:scale-105"
-                  >
-                    <FaPaperPlane size={14} />
-                  </button>
-                </div>
-                <p className="text-[10px] text-gray-500 ml-2">We respect your privacy. No spam ever.</p>
-              </form>
-            )}
-          </div>
         </div>
-      </div>
 
-      {/* Copyright Bar */}
-      <div className="bg-black/20 border-t border-white/5 py-8">
-        <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-500 text-sm">&copy; {new Date().getFullYear()} Appliance Vista. All Rights Reserved.</p>
-          <div className="flex gap-6 text-sm flex-wrap">
-            <Link to="/privacy-policy" className="text-gray-500 hover:text-white transition-colors">Privacy Policy</Link>
-            <Link to="/terms-of-service" className="text-gray-500 hover:text-white transition-colors">Terms of Service</Link>
-            <Link to="/refund-policy" className="text-gray-500 hover:text-white transition-colors">Refund Policy</Link>
-            <Link to="/cookie-policy" className="text-gray-500 hover:text-white transition-colors">Cookie Policy</Link>
+        <div className="pt-10 border-t border-white/5 text-center flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-slate-500 text-xs font-medium">
+            © {new Date().getFullYear()} <span className="text-white font-bold tracking-tight uppercase">DriverVista</span>. Technical Integrity Guaranteed.
+          </p>
+          <div className="flex gap-8">
+            {policies.map(policy => (
+              <Link key={policy.path} to={policy.path} className="text-slate-500 hover:text-white text-[10px] uppercase font-bold tracking-[2px] transition-colors">{policy.name}</Link>
+            ))}
           </div>
         </div>
       </div>

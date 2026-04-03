@@ -9,20 +9,6 @@ import Blog from './pages/Blog';
 import Contact from './pages/Contact';
 import ServiceDetails from './pages/ServiceDetails';
 import BlogDetails from './pages/BlogDetails';
-import WashingMachineRepair from './pages/services/WashingMachineRepair';
-import RefrigeratorRepair from './pages/services/RefrigeratorRepair';
-import DishwasherRepair from './pages/services/DishwasherRepair';
-import TelevisionRepair from './pages/services/TelevisionRepair';
-import CoffeeMakerRepair from './pages/services/CoffeeMakerRepair';
-import OtherAppliances from './pages/services/OtherAppliances';
-import AirConditionerRepair from './pages/services/AirConditionerRepair';
-import MicrowaveOvenRepair from './pages/services/MicrowaveOvenRepair';
-import OvenStoveRepair from './pages/services/OvenStoveRepair';
-import WaterPurifierRepair from './pages/services/WaterPurifierRepair';
-import ClothesDryerRepair from './pages/services/ClothesDryerRepair';
-import KitchenChimneyRepair from './pages/services/KitchenChimneyRepair';
-import BookAppointmentPage from './pages/services/BookAppointmentPage';
-import BookAppointmentMain from './pages/services/BookAppointmenttvvvmain';
 import PrivacyPolicy from './pages/policies/PrivacyPolicy';
 import TermsOfService from './pages/policies/TermsOfService';
 import RefundPolicy from './pages/policies/RefundPolicy';
@@ -35,7 +21,8 @@ import './App.css';
 
 const AppContent = () => {
   const location = useLocation();
-  const hideHeaderFooter = ['/service/book-appointment', '/service/television'].includes(location.pathname);
+  // No longer hiding header/footer for specific appliance pages as they are removed
+  const hideHeaderFooter = false;
 
   return (
     <div className="App overflow-x-hidden">
@@ -52,24 +39,11 @@ const AppContent = () => {
         <Route path="/refund-policy" element={<RefundPolicy />} />
         <Route path="/cookie-policy" element={<CookiePolicy />} />
         <Route path="/disclaimer" element={<Disclaimer />} />
-        <Route path="/service/washing-machine" element={<WashingMachineRepair />} />
-        <Route path="/service/refrigerator" element={<RefrigeratorRepair />} />
-        <Route path="/service/dishwasher" element={<DishwasherRepair />} />
-        <Route path="/service/coffee-maker" element={<CoffeeMakerRepair />} />
-        <Route path="/service/other-appliances" element={<OtherAppliances />} />
-        <Route path="/service/air-conditioner" element={<AirConditionerRepair />} />
-        <Route path="/service/microwave-oven" element={<MicrowaveOvenRepair />} />
-        <Route path="/service/oven-stove" element={<OvenStoveRepair />} />
-        <Route path="/service/water-purifier" element={<WaterPurifierRepair />} />
-        <Route path="/service/clothes-dryer" element={<ClothesDryerRepair />} />
-        <Route path="/service/kitchen-chimney" element={<KitchenChimneyRepair />} />
         
-        {/* Special landing pages without standard header/footer */}
-        <Route path="/service/television" element={<BookAppointmentMain />} />
-        <Route path="/service/book-appointment" element={<BookAppointmentPage />} />
+        {/* Dynamic route for all Drivers */}
+        <Route path="/service/:slug" element={<ServiceDetails />} />
         
-        {/* Catch-all for other services */}
-        <Route path="/service/:id" element={<ServiceDetails />} />
+        {/* Catch-all for blogs */}
         <Route path="/blog/:id" element={<BlogDetails />} />
       </Routes>
       {!hideHeaderFooter && <Footer />}

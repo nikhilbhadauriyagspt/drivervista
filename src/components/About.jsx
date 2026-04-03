@@ -1,50 +1,92 @@
 import React from 'react';
-import { FaCheckCircle } from 'react-icons/fa';
-import { useBooking } from '../context/BookingContext';
+import { FaCheck, FaShieldAlt, FaCogs, FaMicrochip } from 'react-icons/fa';
 
 const About = () => {
-  const { openBookingModal } = useBooking();
   return (
-    <section className="py-20 bg-light overflow-hidden" id="about">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row items-center -mx-4">
-          <div className="w-full lg:w-1/2 px-4 mb-12 lg:mb-0" data-aos="fade-right">
-            <div className="relative">
-              <img src="/banner/about.jpg" className="rounded-2xl shadow-2xl w-full object-cover h-[350px] md:h-[500px]" alt="About Our Team" />
-              <div className="bg-secondary p-8 rounded-xl absolute -bottom-6 -right-6 md:right-6 md:bottom-6 shadow-xl text-white hidden sm:block" style={{ maxWidth: '220px' }}>
-                <h2 className="font-heading font-extrabold text-3xl mb-1">Service</h2>
-                <p className="font-bold text-sm uppercase tracking-wider opacity-90">Professional Appliance Care</p>
+    <section id="about" className="py-24 bg-white font-poppins overflow-hidden">
+      <div className="container mx-auto px-6 lg:px-12">
+        <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+          
+          {/* Refined Image Side */}
+          <div className="w-full lg:w-1/2 relative" data-aos="fade-right">
+            <div className="relative z-10 rounded-[3rem] overflow-hidden border border-slate-100 shadow-sm">
+              <img 
+                src="/banner/about.jpg" 
+                alt="System Architecture" 
+                className="w-full h-[500px] object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+              
+              {/* Floating Stat Overlay */}
+              <div className="absolute bottom-10 left-10 right-10">
+                <div className="bg-white/10 backdrop-blur-xl border border-white/20 p-8 rounded-3xl">
+                  <p className="text-white text-lg font-medium leading-relaxed italic">
+                    "Drivers are the essential translators that allow your software to speak the language of your hardware."
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="w-full lg:w-1/2 px-4 lg:pl-16" data-aos="fade-left">
-            <h6 className="text-primary font-bold uppercase tracking-widest text-sm mb-4 inline-block border-b-2 border-secondary pb-1">Our Organization</h6>
-            <h2 className="text-3xl md:text-5xl font-heading font-bold text-gray-900 mb-6 leading-tight">Providing Professional Appliance Repair Solutions</h2>
-            <p className="text-gray-600 mb-6 text-lg leading-relaxed">
-              At <strong>Appliance Vista</strong>, we pride ourselves on being a leading provider of high-quality appliance repair and maintenance services. With years of hands-on experience in the industry, our mission is simple: to provide fast, reliable, and affordable technical solutions that keep your home running smoothly. 
-            </p>
-            <p className="text-gray-600 mb-8 text-lg leading-relaxed">
-              We understand that appliances are the backbone of your daily routine. From keeping your food fresh to ensuring your clothes are clean, these machines are essential. That's why we focus on technical excellence, using advanced diagnostic tools and genuine parts to ensure every repair is performed to the highest standards. Our team of certified technicians is dedicated to extending the life of your appliances and providing you with peace of mind.
-            </p>
             
-            <div className="space-y-6 mb-10">
-              {[
-                { title: 'Trained Technicians', desc: 'Technicians with experience in appliance maintenance.' },
-                { title: 'Upfront Pricing', desc: 'Detailed cost estimates provided before work begins.' },
-                { title: 'Scheduled Support', desc: 'Service appointments based on availability.' }
-              ].map((item, index) => (
-                <div key={index} className="flex items-start">
-                  <div className="flex-shrink-0 mt-1"><FaCheckCircle className="text-secondary text-2xl" /></div>
-                  <div className="ml-4">
-                    <h5 className="font-bold text-gray-900 text-lg mb-1">{item.title}</h5>
-                    <p className="text-gray-500 text-sm">{item.desc}</p>
-                  </div>
+            {/* Subtle Decorative Elements */}
+            <div className="absolute -top-10 -left-10 w-40 h-40 bg-blue-50 rounded-full blur-3xl -z-10 animate-pulse"></div>
+            <div className="absolute -bottom-10 -right-10 w-60 h-60 bg-indigo-50 rounded-full blur-3xl -z-10 animate-pulse delay-1000"></div>
+          </div>
+
+          {/* Clean Content Side */}
+          <div className="w-full lg:w-1/2" data-aos="fade-left">
+            <div className="inline-flex items-center gap-2 bg-blue-50 px-4 py-1.5 rounded-full mb-6">
+              <FaShieldAlt className="text-blue-600 text-xs" />
+              <span className="text-blue-600 text-[11px] font-bold uppercase tracking-[2px]">System Authority</span>
+            </div>
+            
+            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-8 leading-tight tracking-tight">
+              The Digital Bridge for <br />
+              <span className="text-blue-600">Hardware Intelligence</span>
+            </h2>
+            
+            <p className="text-slate-500 text-lg font-medium mb-10 leading-relaxed">
+              Essential drivers are the core software components required for a computer to start and perform basic operations. They act as sophisticated translators, converting high-level OS commands into instructions that your hardware can execute with precision.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+              <div className="flex gap-5">
+                <div className="flex-shrink-0 w-12 h-12 bg-slate-50 rounded-2xl flex items-center justify-center text-blue-600 border border-slate-100">
+                  <FaMicrochip className="text-xl" />
                 </div>
-              ))}
+                <div>
+                  <h4 className="text-slate-900 font-bold text-base mb-1">Architecture Sync</h4>
+                  <p className="text-slate-400 text-xs font-medium">Direct data flow management between GPU, CPU, and RAM.</p>
+                </div>
+              </div>
+              <div className="flex gap-5">
+                <div className="flex-shrink-0 w-12 h-12 bg-slate-50 rounded-2xl flex items-center justify-center text-blue-600 border border-slate-100">
+                  <FaCogs className="text-xl" />
+                </div>
+                <div>
+                  <h4 className="text-slate-900 font-bold text-base mb-1">Total Stability</h4>
+                  <p className="text-slate-400 text-xs font-medium">Preventing system crashes, visual flickers, and boot failures.</p>
+                </div>
+              </div>
             </div>
 
-            <button onClick={() => openBookingModal()} className="inline-block bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-full font-bold uppercase tracking-wide transition-all duration-300 shadow-lg">
-              Request a Consultation
+            <ul className="space-y-4 mb-12">
+              {[
+                "Chipset drivers for core motherboard logic",
+                "Graphics drivers for high-definition rendering",
+                "Network protocols for seamless connectivity",
+                "Audio engines for precise sound processing"
+              ].map((item, index) => (
+                <li key={index} className="flex items-center gap-4 text-slate-600 group">
+                  <div className="w-5 h-5 rounded-full bg-blue-50 flex items-center justify-center text-[10px] text-blue-600 border border-blue-100 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                    <FaCheck />
+                  </div>
+                  <span className="text-sm font-semibold">{item}</span>
+                </li>
+              ))}
+            </ul>
+
+            <button className="px-10 py-4 bg-slate-900 text-white font-bold rounded-2xl hover:bg-blue-600 transition-all shadow-xl shadow-slate-900/10 active:scale-95">
+              Explore Documentation Library
             </button>
           </div>
         </div>

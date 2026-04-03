@@ -2,73 +2,108 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { servicesData } from '../data/services';
 import * as Icons from 'react-icons/fa';
-import { useBooking } from '../context/BookingContext';
 
 const Services = () => {
-  const { openBookingModal } = useBooking();
+  // Grouping services by their category logic
+  const categories = [
+    {
+      name: "Essential Drivers",
+      desc: "Core System Requirements for booting and basic communication.",
+      driverIds: [1, 2, 3, 4]
+    },
+    {
+      name: "Hardware-Specific",
+      desc: "Internal Component Control for optimization and speed.",
+      driverIds: [5, 6, 7, 8]
+    },
+    {
+      name: "Peripheral Drivers",
+      desc: "External Device Integration for connectivity and capture.",
+      driverIds: [9, 10, 11]
+    },
+    {
+      name: "Advanced Systems",
+      desc: "Low-level Firmware & Security for system integrity.",
+      driverIds: [12, 13, 14]
+    }
+  ];
+
   return (
-    <section className="py-24 bg-white" id="services">
-      <div className="container mx-auto px-4">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <h6 className="text-secondary font-bold uppercase tracking-widest text-sm mb-3">Our Services</h6>
-          <h2 className="text-3xl md:text-5xl font-heading font-bold text-gray-900 mb-6">Expert Repair Solutions</h2>
-          <p className="text-gray-500">We specialize in a wide range of appliance repairs, ensuring your home runs smoothly with minimal downtime.</p>
+    <section className="py-20 bg-white font-poppins" id="services">
+      <div className="container mx-auto px-6 lg:px-12">
+        
+        {/* Main Section Header */}
+        <div className="max-w-3xl mb-20" data-aos="fade-up">
+          <div className="inline-flex items-center gap-2 bg-blue-50 px-3 py-1 rounded-full mb-4">
+            <Icons.FaDatabase className="text-blue-600 text-[10px]" />
+            <span className="text-blue-600 text-[10px] font-bold uppercase tracking-widest">Driver Library</span>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6 tracking-tight">
+            System <span className="text-blue-600">Hardware Index</span>
+          </h2>
+          <p className="text-slate-500 text-base font-medium leading-relaxed">
+            Every computer requires a specific set of drivers to function. Our database covers all essential hardware communication layers.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {servicesData.map((service, index) => {
-            const IconComponent = Icons[service.iconName] || Icons.FaTools;
-            return (
-              <div
-                key={service.id}
-                className="group h-full bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden flex flex-col border border-gray-100"
-                data-aos="fade-up"
-                data-aos-delay={index * 100}
-              >
-                <div className="relative h-64 overflow-hidden">
-                  <img
-                    src={service.image}
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    alt={service.title}
-                  />
-                  <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-all duration-500"></div>
-
-                  {/* Floating Icon */}
-                  <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 ">
-                    <div className="bg-secondary text-white w-14 h-14 relative z-50 rounded-2xl shadow-lg flex items-center justify-center rotate-45 group-hover:rotate-0 transition-transform duration-500">
-                      <div className="-rotate-45 group-hover:rotate-0 transition-transform duration-500">
-                        <IconComponent size={24} />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="px-6 pt-12 pb-8 flex-grow flex flex-col items-center text-center">
-                  <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-primary transition-colors">{service.title}</h3>
-                  <p className="text-gray-500 mb-6 flex-grow leading-relaxed">
-                    {service.shortDesc}
-                  </p>
-                  <Link
-                    to={`/service/${service.slug}`}
-                    className="inline-flex items-center font-bold text-xs uppercase tracking-widest text-primary hover:text-secondary transition-colors"
-                  >
-                    Explore Service <span className="ml-2 transition-transform group-hover:translate-x-1">&rarr;</span>
-                  </Link>
+        {/* Grouped Category Layout */}
+        <div className="space-y-20">
+          {categories.map((cat, catIdx) => (
+            <div key={catIdx} className="relative" data-aos="fade-up">
+              
+              {/* Category Header */}
+              <div className="flex items-center gap-5 mb-10 border-b border-slate-50 pb-6">
+                <div className="flex-shrink-0 w-1 h-8 bg-blue-600 rounded-full"></div>
+                <div>
+                  <h3 className="text-xl font-bold text-slate-900">{cat.name}</h3>
+                  <p className="text-slate-400 text-xs font-medium">{cat.desc}</p>
                 </div>
               </div>
-            );
-          })}
+
+              {/* Driver Cards Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {servicesData.filter(s => cat.driverIds.includes(s.id)).map((service, index) => {
+                  const IconComponent = Icons[service.iconName] || Icons.FaCogs;
+                  return (
+                    <div
+                      key={service.id}
+                      className="group p-7 bg-white border border-slate-100 rounded-[2rem] hover:border-blue-200 hover:shadow-[0_15px_30px_-15px_rgba(0,0,0,0.05)] transition-all duration-500 flex flex-col items-start"
+                    >
+                      <div className="w-11 h-11 bg-slate-50 text-slate-400 group-hover:bg-blue-600 group-hover:text-white rounded-2xl flex items-center justify-center text-lg mb-5 transition-all duration-500 border border-slate-50 group-hover:border-blue-600 shadow-sm">
+                        <IconComponent />
+                      </div>
+                      
+                      <h4 className="text-base font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors tracking-tight">{service.title}</h4>
+                      <p className="text-slate-500 text-[12px] leading-relaxed mb-6 font-medium line-clamp-2">
+                        {service.shortDesc}
+                      </p>
+                      
+                      <Link
+                        to={`/service/${service.slug}`}
+                        className="mt-auto flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-slate-400 group-hover:text-blue-600 transition-colors"
+                      >
+                        Technical Specs <Icons.FaChevronRight size={7} />
+                      </Link>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
         </div>
 
-        <div className="mt-16 text-center">
-          <p className="text-gray-600 mb-6 italic">Don't see your appliance? We probably fix it anyway!</p>
-          <button
-            onClick={() => openBookingModal()}
-            className="text-primary font-bold border-b-2 border-secondary hover:text-secondary transition-colors"
-          >
-            Contact us for custom inquiries
-          </button>
+        {/* Global Support Callout - Refined */}
+        <div className="mt-24 p-10 bg-slate-900 rounded-[3rem] relative overflow-hidden text-center shadow-lg" data-aos="zoom-in">
+           <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#fff 1px, transparent 1px)', backgroundSize: '25px 25px' }}></div>
+           <div className="relative z-10">
+              <h4 className="text-white text-xl md:text-2xl font-bold mb-4">Experience Hardware Problems?</h4>
+              <p className="text-slate-400 text-sm font-medium max-w-xl mx-auto mb-8">Our technical team specializes in resolving driver conflicts and hardware-software communication errors.</p>
+              <Link to="/contact" className="px-8 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-white hover:text-slate-900 transition-all text-xs inline-flex items-center gap-3 active:scale-95 shadow-md shadow-blue-600/10">
+                <Icons.FaWrench size={14} /> Request Diagnostic Support
+              </Link>
+           </div>
         </div>
+
       </div>
     </section>
   );

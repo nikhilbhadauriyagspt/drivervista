@@ -1,63 +1,88 @@
 import React from 'react';
-import { FaClipboardList, FaSearch, FaTools, FaCheckDouble } from 'react-icons/fa';
+import { FaPlay, FaMicrochip, FaDesktop, FaVolumeUp, FaHdd, FaMousePointer, FaChevronRight } from 'react-icons/fa';
 
 const steps = [
   {
-    icon: <FaClipboardList />,
-    title: "Book a Service",
-    desc: "Simply fill out our online booking form or give us a call. Provide details about your appliance type and the issues you're facing. We'll schedule a time that works best for you."
+    id: 1,
+    icon: <FaMousePointer />,
+    title: "User Command",
+    desc: "You click play on a video file. Your OS receives the request and starts the coordination.",
+    color: "blue"
   },
   {
-    icon: <FaSearch />,
-    title: "Expert Diagnosis",
-    desc: "Our certified technician will arrive at your doorstep and perform a comprehensive inspection of your appliance to identify the root cause of the problem using advanced diagnostic tools."
+    id: 2,
+    icon: <FaHdd />,
+    title: "Storage Access",
+    desc: "Storage driver reads the video data from your SSD or HDD and sends it to the OS.",
+    color: "indigo"
   },
   {
-    icon: <FaTools />,
-    title: "Professional Repair",
-    desc: "Once you approve the estimate, we proceed with the repair using 100% genuine spare parts. We focus on technical precision to ensure the repair lasts and your appliance runs efficiently."
+    id: 3,
+    icon: <FaMicrochip />,
+    title: "Chipset Sync",
+    desc: "The chipset driver manages high-speed data flow between CPU, RAM, and the motherboard.",
+    color: "emerald"
   },
   {
-    icon: <FaCheckDouble />,
-    title: "Quality Check",
-    desc: "After the repair, we perform multiple tests to ensure your appliance is fully functional and safe to use. We don't leave until you're satisfied with the results and the workspace is clean."
+    id: 4,
+    icon: <FaDesktop />,
+    title: "Visual Rendering",
+    desc: "The graphics driver translates data into commands for the GPU to display frames.",
+    color: "blue"
+  },
+  {
+    id: 5,
+    icon: <FaVolumeUp />,
+    title: "Audio Engine",
+    desc: "The audio driver converts digital signals into analog sound for your hardware output.",
+    color: "rose"
   }
 ];
 
 const Process = () => {
   return (
-    <section className="py-24 bg-white overflow-hidden" id="process">
-      <div className="container mx-auto px-4">
-        <div className="text-center max-w-2xl mx-auto mb-20" data-aos="fade-up">
-          <h6 className="text-secondary font-bold uppercase tracking-widest text-sm mb-3">How It Works</h6>
-          <h2 className="text-3xl md:text-5xl font-heading font-bold text-gray-900 mb-6">Our Simple Repair Process</h2>
-          <p className="text-gray-500 text-lg">We've streamlined our service to provide you with a hassle-free experience from booking to completion.</p>
+    <section id="process" className="py-24 bg-slate-50/50 font-poppins overflow-hidden">
+      <div className="container mx-auto px-6 lg:px-12">
+        
+        <div className="text-center max-w-3xl mx-auto mb-20" data-aos="fade-up">
+          <div className="inline-flex items-center gap-2 bg-blue-50 px-4 py-1.5 rounded-full mb-6">
+            <FaPlay className="text-blue-600 text-[10px]" />
+            <span className="text-blue-600 text-[11px] font-bold uppercase tracking-[2px]">Optimization Flow</span>
+          </div>
+          <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
+            The Coordinated <span className="text-blue-600">Ecosystem</span>
+          </h2>
+          <p className="text-slate-500 text-lg font-medium leading-relaxed">
+            Witness how multiple driver layers collaborate in milliseconds to execute a simple command like watching a video.
+          </p>
         </div>
 
         <div className="relative">
-          {/* Connection line for desktop */}
-          <div className="hidden lg:block absolute top-1/2 left-0 w-full h-0.5 bg-gray-100 -translate-y-1/2 z-0"></div>
+          {/* Subtle Connector Line (Desktop) */}
+          <div className="hidden lg:block absolute top-1/2 left-0 w-full h-[1px] bg-slate-200 -translate-y-1/2 z-0"></div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 relative z-10">
             {steps.map((step, index) => (
-              <div
-                key={index}
-                className="text-center group"
+              <div 
+                key={step.id} 
+                className="group flex flex-col items-center text-center"
                 data-aos="fade-up"
-                data-aos-delay={index * 150}
+                data-aos-delay={index * 100}
               >
-                <div className="w-20 h-20 bg-white border-4 border-gray-50 rounded-[2rem] flex items-center justify-center text-primary text-3xl mx-auto mb-8 shadow-xl group-hover:bg-secondary group-hover:text-white transition-all duration-500 rotate-45 group-hover:rotate-0">
-                  <div className="-rotate-45 group-hover:rotate-0 transition-all duration-500">
-                    {step.icon}
-                  </div>
+                <div className={`w-16 h-16 rounded-[1.5rem] bg-white border border-slate-100 flex items-center justify-center text-xl shadow-sm transform group-hover:scale-110 group-hover:border-blue-200 transition-all duration-500 mb-8
+                  ${step.color === 'blue' ? 'text-blue-600' : ''}
+                  ${step.color === 'indigo' ? 'text-indigo-600' : ''}
+                  ${step.color === 'emerald' ? 'text-emerald-600' : ''}
+                  ${step.color === 'rose' ? 'text-rose-600' : ''}
+                `}>
+                  {step.icon}
                 </div>
-
-                <div className="bg-gray-50 p-8 rounded-[2rem] border border-gray-100 group-hover:bg-white group-hover:shadow-2xl transition-all duration-500 h-full">
-                  <div className="bg-secondary text-white w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm mx-auto mb-6 shadow-lg">
-                    {index + 1}
+                <div className="bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm h-full group-hover:border-blue-100 group-hover:shadow-md transition-all duration-500 relative">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">
+                    Step 0{step.id}
                   </div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-4">{step.title}</h4>
-                  <p className="text-gray-500 text-sm leading-relaxed">
+                  <h3 className="text-slate-900 font-bold text-base mb-4 uppercase tracking-wide">{step.title}</h3>
+                  <p className="text-slate-400 text-xs font-medium leading-relaxed">
                     {step.desc}
                   </p>
                 </div>
@@ -66,11 +91,16 @@ const Process = () => {
           </div>
         </div>
 
-        <div className="mt-36 text-center" data-aos="fade-up">
-          <div className="inline-flex flex-col md:flex-row items-center gap-8 bg-gray-50 p-6 md:p-3 pr-8 rounded-[2rem] md:rounded-full border border-gray-100">
-            <p className="text-gray-600 font-medium px-4">Ready to get your appliance fixed? Schedule a service with our expert team today.</p>
-            <a href="#contact" className="text-primary font-bold uppercase tracking-widest text-xs border-b-2 border-secondary pb-1 hover:text-secondary transition-colors">Book Now &rarr;</a>
-          </div>
+        {/* Clean Support Banner */}
+        <div className="mt-20 p-10 bg-white border border-slate-100 rounded-[3rem] text-center shadow-sm relative overflow-hidden" data-aos="zoom-in">
+           <div className="absolute top-[-50%] right-[-10%] w-96 h-96 bg-blue-50/50 rounded-full blur-[100px]"></div>
+           <div className="relative z-10">
+             <h4 className="text-slate-900 text-2xl font-bold mb-4">Ready to optimize your system stack?</h4>
+             <p className="text-slate-500 mb-10 max-w-xl mx-auto font-medium">Ensuring your drivers are synchronized is the single most important factor for hardware longevity.</p>
+             <button className="inline-flex items-center gap-3 px-10 py-4 bg-blue-600 text-white font-bold rounded-2xl hover:bg-slate-900 transition-all shadow-xl shadow-blue-600/15 active:scale-95 group">
+               Initialize Full Scan <FaChevronRight size={12} className="group-hover:translate-x-1 transition-transform" />
+             </button>
+           </div>
         </div>
       </div>
     </section>
