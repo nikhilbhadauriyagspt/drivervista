@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaCheckCircle, FaSpinner, FaDatabase, FaBolt, FaChevronRight } from 'react-icons/fa';
+import { FaEnvelope, FaMapMarkerAlt, FaCheckCircle, FaSpinner, FaDatabase, FaBolt, FaChevronRight } from 'react-icons/fa';
 import CONFIG from '../config';
 
 const Contact = () => {
@@ -60,7 +60,7 @@ const Contact = () => {
    return (
       <div className="min-h-screen bg-white font-poppins pt-20">
          <Helmet>
-            <title>Technical Support | DriverVista Support Hub</title>
+            <title>Technical Support | YourPCDriver Support Hub</title>
             <meta name="description" content="Request technical diagnostic support for hardware driver issues. Our specialists are available for system optimization." />
          </Helmet>
 
@@ -102,7 +102,7 @@ const Contact = () => {
                         <div>
                            <h4 className="font-bold text-lg text-slate-900 mb-1">Email Correspondence</h4>
                            <p className="text-slate-400 text-xs font-bold uppercase tracking-widest mb-2 italic">Response Time: 2-4 Hours</p>
-                           <a href="mailto:support@drivervista.tech" className="text-xl font-black text-slate-900 hover:text-blue-600 transition-colors tracking-tight break-all text-base md:text-xl">support@drivervista.tech</a>
+                           <a href="mailto:support@yourpcdriver.shop" className="text-xl font-black text-slate-900 hover:text-blue-600 transition-colors tracking-tight break-all text-base md:text-xl">support@yourpcdriver.shop</a>
                         </div>
                      </div>
 
@@ -113,7 +113,7 @@ const Contact = () => {
                         <div>
                            <h4 className="font-bold text-lg text-slate-900 mb-1">Headquarters</h4>
                            <p className="text-slate-500 font-medium leading-relaxed mt-2 italic">
-                              Tech Corridor South, <br />California, USA
+                              1267 Filer Ave E, <br />Twin Falls, ID 83301, USA
                            </p>
                         </div>
                      </div>

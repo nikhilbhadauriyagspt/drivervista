@@ -11,9 +11,9 @@ const Projects = () => {
   return (
     <div className="min-h-screen bg-white">
       <Helmet>
-        <title>Our Projects - Appliance Vista</title>
+        <title>Our Projects - YourPCDriver</title>
         <meta name="description" content="View our portfolio of successful appliance repairs and maintenance projects." />
-        <link rel="canonical" href="https://www.appliancevista.shop/projects" />
+        <link rel="canonical" href="https://www.yourpcdriver.shop/projects" />
       </Helmet>
 
       <div className="relative bg-gray-900 py-32 overflow-hidden">

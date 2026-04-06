@@ -4,9 +4,8 @@ const SettingsContext = createContext();
 
 export const SettingsProvider = ({ children }) => {
     const [settings, setSettings] = useState({
-        contact_phone: "+1-402-508-9991",
-        contact_email: "support@appliancevista.shop",
-        address: "123 Appliance St, Tech City",
+        contact_email: "support@yourpcdriver.shop",
+        address: "1267 Filer Ave E, Twin Falls, ID 83301, USA",
     });
 
     return (
@@ -23,3 +22,4 @@ export const useSettings = () => {
     }
     return context;
 };
+

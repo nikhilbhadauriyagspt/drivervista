@@ -23,9 +23,9 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>DriverVista - Professional System Driver Support & Solutions</title>
+        <title>YourPCDriver - Professional System Driver Support & Solutions</title>
         <meta name="description" content="Expert solutions for computer driver issues. We diagnose and fix chipset, graphics, audio, and network driver problems to optimize your system performance." />
-        <link rel="canonical" href="https://www.drivervista.tech/" />
+        <link rel="canonical" href="https://www.yourpcdriver.shop/" />
       </Helmet>
 
       <Hero />

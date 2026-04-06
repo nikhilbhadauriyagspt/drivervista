@@ -1,4 +1,4 @@
-﻿import React, { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { FaCheckCircle, FaArrowLeft, FaShieldAlt, FaTools, FaRegClock } from 'react-icons/fa';
@@ -13,7 +13,7 @@ const WashingMachineRepair = () => {
   return (
     <div className="bg-white min-h-screen pt-32 pb-24">
       <Helmet>
-        <title>Expert Washing Machine Repair Service | Appliance Vista</title>
+        <title>Expert Washing Machine Repair Service | YourPCDriver</title>
         <meta name="description" content="Professional washing machine repair for all brands. We fix spinning issues, leaks, drainage problems, and more. Certified technicians & genuine parts. Book now!" />
       </Helmet>
       
@@ -44,7 +44,7 @@ const WashingMachineRepair = () => {
             
             <div className="prose prose-lg text-gray-500 mb-10 max-w-none">
               <p>
-                Is your washing machine giving you trouble? Don't let a pile of dirty laundry ruin your day. At <strong>Appliance Vista</strong>, we specialize in diagnosing and fixing all types of washing machine issues quickly and efficiently. 
+                Is your washing machine giving you trouble? Don't let a pile of dirty laundry ruin your day. At <strong>YourPCDriver</strong>, we specialize in diagnosing and fixing all types of washing machine issues quickly and efficiently. 
               </p>
               <p>
                 Whether you have a <strong>top-load, front-load, or semi-automatic washer</strong>, our certified technicians have the expertise to handle it. We deal with major brands like LG, Samsung, Whirlpool, Bosch, IFB, and more. From minor glitches to major motor repairs, we ensure your appliance performs like new.
@@ -83,4 +83,5 @@ const WashingMachineRepair = () => {
 };
 
 export default WashingMachineRepair;
+
 

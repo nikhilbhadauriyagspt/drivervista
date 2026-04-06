@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "drivervista_db";
+$dbname = "yourpcdriver_db";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -44,3 +44,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 $conn->close();
 ?>
+

@@ -1,4 +1,4 @@
-﻿import React, { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { blogsData } from '../data/blogs';
@@ -12,9 +12,9 @@ const Blog = () => {
   return (
     <div className="min-h-screen bg-white">
       <Helmet>
-        <title>Our Blog - Appliance Vista</title>
+        <title>Our Blog - YourPCDriver</title>
         <meta name="description" content="Read our latest articles about appliance maintenance, repair tips, and industry news." />
-        <link rel="canonical" href="https://www.appliancevista.shop/blog" />
+        <link rel="canonical" href="https://www.yourpcdriver.shop/blog" />
       </Helmet>
 
       <div className="relative bg-white py-32 overflow-hidden border-b border-gray-100">
@@ -68,4 +68,5 @@ const Blog = () => {
 };
 
 export default Blog;
+
 

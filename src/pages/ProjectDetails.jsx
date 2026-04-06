@@ -16,7 +16,7 @@ const ProjectDetails = () => {
     return (
       <div className="min-h-screen flex items-center justify-center bg-white">
         <Helmet>
-           <title>Project Not Found - Appliance Vista</title>
+           <title>Project Not Found - YourPCDriver</title>
         </Helmet>
         <div className="text-center">
           <h2 className="text-4xl font-bold text-gray-900 mb-6">Project Not Found</h2>
@@ -31,9 +31,9 @@ const ProjectDetails = () => {
   return (
     <div className="min-h-screen bg-white">
       <Helmet>
-        <title>{project.title} - Appliance Vista Project</title>
+        <title>{project.title} - YourPCDriver Project</title>
         <meta name="description" content={project.description} />
-        <link rel="canonical" href={`https://www.appliancevista.shop/project/${project.id}`} />
+        <link rel="canonical" href={`https://www.yourpcdriver.shop/project/${project.id}`} />
       </Helmet>
 
       {/* Hero Section */}
@@ -147,3 +147,4 @@ const ProjectDetails = () => {
 };
 
 export default ProjectDetails;
+

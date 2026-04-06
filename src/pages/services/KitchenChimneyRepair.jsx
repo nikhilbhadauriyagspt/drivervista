@@ -1,4 +1,4 @@
-﻿import React, { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { FaCheckCircle, FaArrowLeft, FaShieldAlt, FaTools, FaRegClock } from 'react-icons/fa';
@@ -13,7 +13,7 @@ const KitchenChimneyRepair = () => {
   return (
     <div className="bg-white min-h-screen pt-32 pb-24">
       <Helmet>
-        <title>Kitchen Chimney Repair - Appliance Vista Services</title>
+        <title>Kitchen Chimney Repair - YourPCDriver Services</title>
         <meta name="description" content="Keep your kitchen smoke-free with our professional chimney cleaning." />
       </Helmet>
       
@@ -65,4 +65,5 @@ const KitchenChimneyRepair = () => {
 };
 
 export default KitchenChimneyRepair;
+
 

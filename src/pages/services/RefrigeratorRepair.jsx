@@ -1,4 +1,4 @@
-﻿import React, { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { FaCheckCircle, FaArrowLeft, FaShieldAlt, FaTools, FaRegClock } from 'react-icons/fa';
@@ -54,7 +54,7 @@ const RefrigeratorRepair = () => {
             
             <div className="prose prose-lg text-gray-500 mb-10 max-w-none">
               <p>
-                A malfunctioning refrigerator is an emergency. Whether it's a <strong>single-door, double-door, or side-by-side refrigerator</strong>, our skilled technicians at <strong>Appliance Vista</strong> are ready to diagnose and fix the problem immediately. We understand the importance of keeping your groceries fresh and safe.
+                A malfunctioning refrigerator is an emergency. Whether it's a <strong>single-door, double-door, or side-by-side refrigerator</strong>, our skilled technicians at <strong>YourPCDriver</strong> are ready to diagnose and fix the problem immediately. We understand the importance of keeping your groceries fresh and safe.
               </p>
               <p>
                 We service all leading brands, including <strong>Samsung, LG, Whirlpool, Godrej, Haier, Hitachi</strong>, and more. Our experts carry common spare parts to ensure most repairs are completed on the first visit.
@@ -104,4 +104,5 @@ const RefrigeratorRepair = () => {
 };
 
 export default RefrigeratorRepair;
+
 

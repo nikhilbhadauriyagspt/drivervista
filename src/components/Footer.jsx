@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram, FaCogs } from 'react-icons/fa';
+import { FaEnvelope, FaMapMarkerAlt, FaCogs } from 'react-icons/fa';
 
 const Footer = () => {
   const coreDrivers = [
@@ -38,7 +38,7 @@ const Footer = () => {
                 <FaCogs className="text-white text-xl" />
               </div>
               <span className="text-2xl font-extrabold tracking-tighter uppercase italic leading-none">
-                Driver<span className="text-blue-600">Vista</span>
+                YourPC<span className="text-blue-600">Driver</span>
               </span>
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed font-medium">
@@ -92,7 +92,7 @@ const Footer = () => {
                 </div>
                 <div>
                   <p className="text-slate-500 text-[10px] font-bold uppercase tracking-widest mb-1">Email Support</p>
-                  <p className="text-white text-sm font-bold tracking-tight">support@drivervista.tech</p>
+                  <p className="text-white text-sm font-bold tracking-tight">support@yourpcdriver.shop</p>
                 </div>
               </li>
               <li className="flex gap-4">
@@ -111,7 +111,7 @@ const Footer = () => {
 
         <div className="pt-10 border-t border-white/5 text-center flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-slate-500 text-xs font-medium">
-            © {new Date().getFullYear()} <span className="text-white font-bold tracking-tight uppercase">DriverVista</span>. Technical Integrity Guaranteed.
+            © {new Date().getFullYear()} <span className="text-white font-bold tracking-tight uppercase">YourPCDriver</span>. Technical Integrity Guaranteed.
           </p>
           <div className="flex gap-8">
             {policies.map(policy => (

@@ -9,9 +9,9 @@ const RefundPolicy = () => {
   return (
     <div className="bg-white min-h-screen pt-32 pb-24">
       <Helmet>
-        <title>Return Policy - Appliance Vista</title>
-        <meta name="description" content="Official Return Policy for Appliance Vista. Details on returns, process, and refunds." />
-        <link rel="canonical" href="https://www.appliancevista.shop/refund-policy" />
+        <title>Return Policy - YourPCDriver</title>
+        <meta name="description" content="Official Return Policy for YourPCDriver. Details on returns, process, and refunds." />
+        <link rel="canonical" href="https://www.yourpcdriver.shop/refund-policy" />
       </Helmet>
 
       <div className="container mx-auto px-4 max-w-4xl">
@@ -38,17 +38,17 @@ const RefundPolicy = () => {
           <section>
             <h2 className="text-2xl font-bold text-gray-900 mb-4 uppercase">RETURN PROCESS</h2>
             <p>
-              To return an item, please email customer service at <a href="mailto:appliancevista@outlook.com" className="text-primary font-bold">appliancevista@outlook.com</a> to obtain
+              To return an item, please email customer service at <a href="mailto:yourpcdriver@outlook.com" className="text-primary font-bold">yourpcdriver@outlook.com</a> to obtain
               an Return Merchandise Authorization (RMA) number. After receiving an RMA number, place
               the item securely in its original packaging and include your proof of purchase, then mail your
               return to the following address:
             </p>
             <address className="not-italic bg-gray-50 p-8 rounded-2xl border border-gray-100 mt-6 leading-relaxed font-bold">
-              Appliance Vista<br />
+              YourPCDriver<br />
               Attn: Returns<br />
               RMA #<br />
-              Grandview<br />
-              Glendale, CA 91201<br />
+              1267 Filer Ave E<br />
+              Twin Falls, ID 83301<br />
               United States
             </address>
             <p className="mt-6">Return shipping charges will be paid or reimbursed by us.</p>
@@ -80,7 +80,7 @@ const RefundPolicy = () => {
             </p>
             <div className="bg-primary text-white p-8 rounded-2xl shadow-xl mt-4">
               <p className="font-bold text-xl mb-2">+1-402-508-9991</p>
-              <a href="mailto:appliancevista@outlook.com" className="text-secondary font-bold text-lg hover:underline">appliancevista@outlook.com</a>
+              <a href="mailto:yourpcdriver@outlook.com" className="text-secondary font-bold text-lg hover:underline">yourpcdriver@outlook.com</a>
             </div>
           </section>
         </div>

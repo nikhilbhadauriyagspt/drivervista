@@ -1,4 +1,4 @@
-﻿import React, { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { FaCheckCircle, FaArrowLeft, FaShieldAlt, FaTools, FaRegClock } from 'react-icons/fa';
@@ -14,7 +14,7 @@ const AirConditionerRepair = () => {
     <div className="bg-white min-h-screen pt-32 pb-24">
       <Helmet>
         <title>Professional AC Repair & Service | Air Conditioner Maintenance</title>
-        <meta name="description" content="Expert AC repair and service for split and window units. We offer gas filling, installation, and advanced troubleshooting. Beat the heat with Appliance Vista!" />
+        <meta name="description" content="Expert AC repair and service for split and window units. We offer gas filling, installation, and advanced troubleshooting. Beat the heat with YourPCDriver!" />
       </Helmet>
       
       <div className="container mx-auto px-4">
@@ -44,7 +44,7 @@ const AirConditionerRepair = () => {
             
             <div className="prose prose-lg text-gray-500 mb-10 max-w-none">
               <p>
-                Is your AC not cooling effectively or making loud noises? Don't sweat it! <strong>Appliance Vista</strong> offers comprehensive air conditioner services for homes and offices. Our certified technicians are experts in handling <strong>Split ACs, Window ACs, and Central Cooling Systems</strong>.
+                Is your AC not cooling effectively or making loud noises? Don't sweat it! <strong>YourPCDriver</strong> offers comprehensive air conditioner services for homes and offices. Our certified technicians are experts in handling <strong>Split ACs, Window ACs, and Central Cooling Systems</strong>.
               </p>
               <p>
                 Regular servicing not only improves cooling efficiency but also reduces electricity bills and extends the lifespan of your unit. We use high-quality refrigerants and genuine spare parts for all repairs.
@@ -84,4 +84,5 @@ const AirConditionerRepair = () => {
 };
 
 export default AirConditionerRepair;
+
 

@@ -26,8 +26,8 @@ const About = () => {
   return (
     <div className="min-h-screen bg-white font-poppins">
       <Helmet>
-        <title>About DriverVista | Professional System Standards</title>
-        <meta name="description" content="Learn about DriverVista's commitment to hardware integrity, technical excellence, and the digital bridge between software and hardware." />
+        <title>About YourPCDriver | Professional System Standards</title>
+        <meta name="description" content="Learn about YourPCDriver's commitment to hardware integrity, technical excellence, and the digital bridge between software and hardware." />
       </Helmet>
 
       {/* Modern Sub-Hero Section */}
@@ -43,7 +43,7 @@ const About = () => {
             <span className="text-blue-600">Hardware Intelligence</span>
           </h1>
           <p className="text-xl text-slate-500 max-w-3xl mx-auto font-medium leading-relaxed">
-            DriverVista was established to bridge the complex gap between high-level software and the intricate physical architecture of modern computing hardware.
+            YourPCDriver was established to bridge the complex gap between high-level software and the intricate physical architecture of modern computing hardware.
           </p>
         </div>
       </section>
@@ -70,7 +70,7 @@ const About = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-8 leading-tight">Restoring Synchronization Across the System Stack</h2>
               <div className="space-y-6 text-slate-500 text-base font-medium leading-relaxed">
                 <p>
-                  In the modern era, hardware components are incredibly advanced, yet they remain dormant without the correct driver protocols. DriverVista specializes in the identification, diagnostic, and resolution of driver-related hardware conflicts.
+                  In the modern era, hardware components are incredibly advanced, yet they remain dormant without the correct driver protocols. YourPCDriver specializes in the identification, diagnostic, and resolution of driver-related hardware conflicts.
                 </p>
                 <p>
                   We believe that a computer's longevity depends on how well its components speak to each other. By maintaining a database of over 50,000 verified protocols and employing system architects, we ensure that your hardware works exactly as the manufacturer intended.
@@ -157,10 +157,10 @@ const About = () => {
          <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-2xl font-bold text-slate-900 mb-6 tracking-tight uppercase">Technical Authority & Accountability</h2>
             <p className="text-slate-500 text-base font-medium leading-relaxed mb-12">
-              We believe that trust is established through consistent system performance and transparent documentation. DriverVista ensures that every client receives a technical breakdown of the hardware conflict and the verified fix implemented.
+              We believe that trust is established through consistent system performance and transparent documentation. YourPCDriver ensures that every client receives a technical breakdown of the hardware conflict and the verified fix implemented.
             </p>
             <div className="inline-block border-b-2 border-blue-600 pb-2">
-               <p className="font-black text-slate-900 tracking-tighter text-2xl uppercase italic">Driver<span className="text-blue-600">Vista</span></p>
+               <p className="font-black text-slate-900 tracking-tighter text-2xl uppercase italic">YourPC<span className="text-blue-600">Driver</span></p>
             </div>
          </div>
       </section>

@@ -136,7 +136,7 @@ const Header = () => {
               </div>
               <div className="flex flex-col">
                 <span className="text-2xl font-extrabold tracking-tight text-gray-900 leading-none">
-                  Driver<span className="text-blue-600">Vista</span>
+                  YourPC<span className="text-blue-600">Driver</span>
                 </span>
                 <span className="text-[10px] font-bold text-gray-400 mt-1 uppercase tracking-widest">System Guide Portal</span>
               </div>
@@ -268,7 +268,7 @@ const Header = () => {
         <div className={`absolute inset-0 bg-gray-900/40 backdrop-blur-sm transition-opacity duration-500 ${isOpen ? 'opacity-100' : 'opacity-0'}`} onClick={() => setIsOpen(false)}></div>
         <div className={`absolute right-0 top-0 h-full w-[85%] bg-white shadow-2xl transition-transform duration-500 p-8 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
           <div className="flex justify-between items-center mb-10">
-            <span className="text-xl font-extrabold text-gray-900">Driver<span className="text-blue-600">Vista</span></span>
+            <span className="text-xl font-extrabold text-gray-900">YourPC<span className="text-blue-600">Driver</span></span>
             <button onClick={() => setIsOpen(false)} className="w-10 h-10 bg-gray-50 rounded-lg text-gray-500 flex items-center justify-center"><FaTimes /></button>
           </div>
           <ul className="space-y-6">

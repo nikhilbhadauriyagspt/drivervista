@@ -1,4 +1,4 @@
-﻿import React, { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { FaCheckCircle, FaArrowLeft, FaShieldAlt, FaTools, FaRegClock } from 'react-icons/fa';
@@ -13,7 +13,7 @@ const CoffeeMakerRepair = () => {
   return (
     <div className="bg-white min-h-screen pt-32 pb-24">
       <Helmet>
-        <title>Coffee Maker Repair - Appliance Vista Services</title>
+        <title>Coffee Maker Repair - YourPCDriver Services</title>
         <meta name="description" content="Start your morning right. We fix espresso machines and coffee makers." />
       </Helmet>
       
@@ -65,4 +65,5 @@ const CoffeeMakerRepair = () => {
 };
 
 export default CoffeeMakerRepair;
+
 
