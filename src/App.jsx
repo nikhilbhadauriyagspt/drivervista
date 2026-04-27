@@ -31,6 +31,7 @@ const AppContent = () => {
       <BookingModal />
       <QuickSupportFAB />
       <Routes>
+
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
@@ -41,10 +42,10 @@ const AppContent = () => {
         <Route path="/refund-policy" element={<RefundPolicy />} />
         <Route path="/cookie-policy" element={<CookiePolicy />} />
         <Route path="/disclaimer" element={<Disclaimer />} />
-        
+
         {/* Dynamic route for all Drivers */}
         <Route path="/service/:slug" element={<ServiceDetails />} />
-        
+
         {/* Catch-all for blogs */}
         <Route path="/blog/:id" element={<BlogDetails />} />
       </Routes>
