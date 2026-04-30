@@ -105,30 +105,18 @@ const Header = () => {
   ];
 
   return (
-    <header className={`fixed top-0 left-0 w-full z-50 font-poppins transition-all duration-300 ${scrolled ? 'shadow-xl' : ''}`}>
+    <header className={`fixed top-0 left-0 w-full z-50 font-poppins transition-all duration-300 ${scrolled ? 'shadow-none' : ''}`}>
       <style dangerouslySetInnerHTML={{
         __html: `
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
         .font-poppins { font-family: 'Poppins', sans-serif; }
       `}} />
 
-      {/* Top Bar */}
-      <div className={`hidden lg:block w-full bg-gray-900 transition-all duration-300 origin-top ${scrolled ? 'scale-y-0 h-0 py-0 opacity-0 overflow-hidden' : 'scale-y-100 h-auto py-2 opacity-100'}`}>
-        <div className="container mx-auto px-4 lg:px-12 flex justify-between items-center text-[11px] font-medium text-white/60">
-          <div className="flex items-center gap-6">
-            <span className="flex items-center gap-2"><FaDatabase className="text-blue-500" /> Database Version: 4.2.0-STABLE</span>
-            <span className="flex items-center gap-2 font-semibold text-white/80"><FaBolt className="text-yellow-500" /> 50,000+ Hardware Protocols Mapped</span>
-          </div>
-          <div className="flex items-center gap-6">
-            <Link to="/services" className="hover:text-blue-500 transition-colors">Documentation Library</Link>
-            <Link to="/contact" className="hover:text-blue-500 transition-colors">Technical Support</Link>
-          </div>
-        </div>
-      </div>
+
 
       {/* Main Header Container */}
       <div className={`w-full bg-white/95 backdrop-blur-md transition-all duration-300 border-b ${scrolled ? 'py-3 border-blue-50/50' : 'py-5 border-gray-100'}`}>
-        <div className="container mx-auto px-4 lg:px-12">
+        <div className="max-w-[1800px] mx-auto px-4 lg:px-12">
           <nav className="flex items-center justify-between gap-8">
 
             <Link to="/" className="flex items-center gap-3 group flex-shrink-0">
@@ -251,9 +239,12 @@ const Header = () => {
               </ul>
 
               <div className="ml-4 pl-4 border-l border-gray-100">
-                <Link to="/contact" className="flex items-center gap-3 bg-blue-600 text-white px-7 py-3 rounded-lg text-sm font-bold shadow-lg shadow-blue-500/20 hover:bg-gray-900 transition-all active:scale-95">
+                <button 
+                  onClick={() => window.jivo_api && window.jivo_api.open()}
+                  className="flex items-center gap-3 bg-blue-600 text-white px-7 py-3 rounded-lg text-sm font-bold shadow-lg shadow-blue-500/20 hover:bg-gray-900 transition-all active:scale-95"
+                >
                   <FaBolt className="text-yellow-400" /> Get In Touch
-                </Link>
+                </button>
               </div>
             </div>
 

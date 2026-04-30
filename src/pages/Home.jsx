@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import Hero from '../components/Hero';
+import NewHero from '../components/NewHero';
 import Capabilities from '../components/Capabilities';
 import TechnicalInsights from '../components/TechnicalInsights';
 import About from '../components/About';
@@ -28,7 +28,7 @@ const Home = () => {
         <link rel="canonical" href="https://www.yourpcdriver.shop/" />
       </Helmet>
 
-      <Hero />
+      <NewHero />
       <Services />
 
       <Capabilities />
