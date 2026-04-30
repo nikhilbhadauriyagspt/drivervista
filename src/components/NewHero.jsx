@@ -64,7 +64,7 @@ const NewHero = () => {
         ref={bottomBannerRef}
         className="w-full h-screen bg-[#F0F2F4] flex items-center justify-center scroll-mt-0 lg:scroll-mt-0"
       >
-        <div className="container mx-auto px-4 py-8">
+        <div className="container mx-auto px-4 md:py-12 lg:py-8">
           <img
             onClick={() => window.jivo_api && window.jivo_api.open()}
             src="/new-hero/banner-bottom.webp"
