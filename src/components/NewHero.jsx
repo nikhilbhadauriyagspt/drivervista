@@ -22,9 +22,9 @@ const NewHero = () => {
   }, []);
 
   return (
-    <section className="relative w-full overflow-hidden lg:pt-[80px]">
+    <section className="relative w-full overflow-hidden md:pt-[80px]">
       {/* Top Slider Section */}
-      <div className="w-full h-[90vh] relative group">
+      <div className="w-full h-full lg:h-[90vh] relative group">
         <Swiper
           modules={[Autoplay, Pagination]}
           speed={1200}
