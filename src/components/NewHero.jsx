@@ -11,20 +11,44 @@ const NewHero = () => {
   const bottomBannerRef = useRef(null);
 
   useEffect(() => {
-    // Timer to scroll to the bottom banner after the slider transition
-    const scrollTimer = setTimeout(() => {
-      if (bottomBannerRef.current) {
-        bottomBannerRef.current.scrollIntoView({ behavior: 'smooth' });
-      }
-    }, 8000);
+    let scrollTimer;
 
-    return () => clearTimeout(scrollTimer);
+    const startScrollTimer = () => {
+      // Clear any existing timer
+      if (scrollTimer) clearTimeout(scrollTimer);
+
+      // Start a new timer to scroll down after 8 seconds
+      scrollTimer = setTimeout(() => {
+        if (window.scrollY < 100 && bottomBannerRef.current) {
+          bottomBannerRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 8000);
+    };
+
+    const handleScroll = () => {
+      // If user is at the very top, start the timer
+      if (window.scrollY < 10) {
+        startScrollTimer();
+      } else {
+        // If they scroll away manually, stop the timer so it doesn't jump
+        if (scrollTimer) clearTimeout(scrollTimer);
+      }
+    };
+
+    // Initial start
+    startScrollTimer();
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      if (scrollTimer) clearTimeout(scrollTimer);
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   return (
     <section className="relative w-full overflow-hidden md:pt-[90px] lg:pt-[80px]">
       {/* Top Slider Section */}
-      <div className="w-full h-full lg:h-[90vh] relative group">
+      <div className="w-full h-full lg:h-90vh] relative group">
         <Swiper
           modules={[Autoplay, Pagination]}
           speed={1200}
@@ -62,14 +86,14 @@ const NewHero = () => {
       {/* Bottom Full-Width Banner Section */}
       <div
         ref={bottomBannerRef}
-        className="w-full h-screen bg-[#F0F2F4] flex items-center justify-center scroll-mt-0 lg:scroll-mt-0"
+        className="w-full min-h-[100vh] bg-[#F0F2F4] flex items-center justify-center scroll-mt-[90px] md:scroll-mt-[0px]"
       >
-        <div className="container mx-auto px-4 md:py-12 lg:py-8">
+        <div className="container mx-auto px-4 py-8 md:py-12">
           <img
             onClick={() => window.jivo_api && window.jivo_api.open()}
             src="/new-hero/banner-bottom.webp"
             alt="Support Bottom Banner"
-            className="w-full h-full object-contain md:object-cover cursor-pointer"
+            className="w-full h-auto max-h-[100vh] object-contain cursor-pointer "
           />
         </div>
       </div>
