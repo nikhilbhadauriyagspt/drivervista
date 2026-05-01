@@ -119,7 +119,7 @@ const Header = () => {
         <div className="max-w-[1800px] mx-auto px-4 lg:px-12">
           <nav className="flex items-center justify-between gap-8">
 
-            <Link to="/" className="flex items-center gap-3 group flex-shrink-0">
+            <Link to="/" className="flex items-center gap-3 group flex-shrink-0 opacity-0">
               <div className="w-10 h-10 bg-blue-600 rounded flex items-center justify-center shadow-lg transition-transform group-hover:rotate-6">
                 <FaCogs className="text-white text-xl animate-spin-slow" />
               </div>
@@ -132,7 +132,7 @@ const Header = () => {
             </Link>
 
             {/* Desktop Search */}
-            <div className="hidden xl:flex items-center flex-grow max-w-md relative" ref={searchRef}>
+            <div className="hidden opacity-0 xl:flex items-center flex-grow max-w-md relative" ref={searchRef}>
               <div className="relative w-full group">
                 <input
                   type="text"
@@ -239,7 +239,7 @@ const Header = () => {
               </ul>
 
               <div className="ml-4 pl-4 border-l border-gray-100">
-                <button 
+                <button
                   onClick={() => window.jivo_api && window.jivo_api.open()}
                   className="flex items-center gap-3 bg-blue-600 text-white px-7 py-3 rounded-lg text-sm font-bold shadow-lg shadow-blue-500/20 hover:bg-gray-900 transition-all active:scale-95"
                 >

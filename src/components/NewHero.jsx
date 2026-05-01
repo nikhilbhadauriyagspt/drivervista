@@ -22,7 +22,7 @@ const NewHero = () => {
         if (window.scrollY < 100 && bottomBannerRef.current) {
           bottomBannerRef.current.scrollIntoView({ behavior: 'smooth' });
         }
-      }, 8000);
+      }, 2000);
     };
 
     const handleScroll = () => {
@@ -51,9 +51,9 @@ const NewHero = () => {
       <div className="w-full h-full lg:h-90vh] relative group">
         <Swiper
           modules={[Autoplay, Pagination]}
-          speed={1200}
+          speed={1000}
           autoplay={{
-            delay: 4000,
+            delay: 2000,
             disableOnInteraction: false,
           }}
           pagination={{
