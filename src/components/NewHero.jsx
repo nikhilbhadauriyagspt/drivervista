@@ -65,21 +65,13 @@ const NewHero = () => {
           <SwiperSlide>
             <div className="w-full h-full flex items-center justify-center bg-gray-100">
               <img
-                src="/new-hero/bannertopone.avif"
+                src="/new-hero/bannertopsecc.avif"
                 alt="Support Banner 1"
                 className="w-full h-full object-cover object-center"
               />
             </div>
           </SwiperSlide>
-          <SwiperSlide>
-            <div className="w-full h-full flex items-center justify-center bg-gray-100">
-              <img
-                src="/new-hero/bannertopsecc.avif"
-                alt="Support Banner 2"
-                className="w-full h-full object-cover object-center"
-              />
-            </div>
-          </SwiperSlide>
+
         </Swiper>
       </div>
 
